@@ -4,11 +4,11 @@ This container has the basic extensions and configuration to run a laravel appli
 
 The latest containers also includes support for memcached. Composer and node js are installed.
 
-    docker pull adalessa/php-apache-laravel
+    docker pull amasolini/laravel-docker-container
 
 To run a single container you only need to run
 
-    docker run --name myApp -p 8080:80 -v "$PWD":/var/www/html adalessa/laravel-container
+    docker run --name myApp -p 8080:80 -v "$PWD":/var/www/html amasolini/laravel-docker-container
  
 
 
@@ -32,7 +32,7 @@ You can create an application from scratch with this container, since composer i
  docker-composer.yml 
 
     web:
-      image: adalessa/laravel-container
+      image: amasolini/laravel-docker-container
       ports:
         - "5000:80"
       volumes:
@@ -58,7 +58,7 @@ To run the command from the container you can use docker-composer instead of doc
 ## Deploy 
 To deploy your application you may want to create your own container with your application in it instead of link the code from yout machine
 
-    FROM adalessa/laravel-container
+    FROM amasolini/laravel-docker-container
     COPY ./code /var/www/html
     RUN composer install
     RUN npm install
@@ -72,5 +72,5 @@ To build your container you may run
 
 
 
-Github: https://github.com/adalessa/laravel-container
+Github: https://github.com/amasolini/laravel-docker-container
 

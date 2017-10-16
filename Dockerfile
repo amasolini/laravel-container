@@ -1,4 +1,4 @@
-FROM adalessa/laravel-container:5.6
+FROM amasolini/laravel-docker-container:5.6
 
 WORKDIR /tmp
 RUN apt-get update && apt-get install -y \	
